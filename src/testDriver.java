@@ -10,9 +10,7 @@ public class testDriver {
     public static void main(String[] args) {
         
         displayTitle();
-        System.out.println();
-        System.out.println("The Void by Kwestion Ahmad");
-        System.out.println();
+        
         
         Scanner in = new Scanner(System.in);
         Player mainP;
@@ -133,6 +131,9 @@ public class testDriver {
         System.out.println("                         J88\"                       %888888x.-`                                  "); 
         System.out.println("                         @%                           \"\"**\"\"                                     "); 
         System.out.println("                       :\"                                                                        "); 
+        System.out.println();
+        System.out.println("The Void by Kwestion Ahmad and Hunter Stewart");
+        System.out.println();
     }
     
     public static void displayInstructions(){
