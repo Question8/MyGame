@@ -16,11 +16,23 @@ public class testDriver {
         Scanner in = new Scanner(System.in);
         Player mainP;
         Ninja n1;
+        TimeZone current;
+        current = new TimeZone(3);
+        int choice = 1;
+        while (choice == 1){
+            current.timeTravel(in);
+            
+            System.out.println("hello");
+            choice = in.nextInt();
+        }
         
+
         
-        System.out.println("1) Create your own name\n"
+
+        System.out.println("Would you like to 1) Create your own name, or "
+
                 + "2) Have a name generated for you");
-        int choice = in.nextInt();
+        choice = in.nextInt();
         if (choice == 1) {
             System.out.println("What would you like to name your character?");
             
@@ -29,9 +41,12 @@ public class testDriver {
             mainP = new Player("John");
         }
         
+
         Dialog(mainP, in);
         
-        System.out.println("1) Create your own Henchman\n"
+       
+        /*      TESTING THE FIGHTS
+        System.out.println("Would you like to 1) Create your own Henchman, or "
                 + "2) Have a ninja generated for you");
         choice = in.nextInt();
         if (choice == 1) {
@@ -58,6 +73,9 @@ public class testDriver {
         System.out.println("============================");
         System.out.println("Ninja's Data");
         n1.printInfo();
+        */
+        clear();
+        
     }
     
     public static void clear(){
