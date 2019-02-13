@@ -115,6 +115,7 @@ public class testDriver {
         
     }
     public static void Dialog(Player p, Scanner in){
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------- ");
         System.out.println("Year: 2019\n" +
                            "Location: Cam Coorperation\n" +
                            "Date: January 3rd\n" +
