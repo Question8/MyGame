@@ -17,11 +17,11 @@ public class TimeZone {
         switch(timePeriod)
         {
             case 1:
-                this.year = 1396;
+                this.year = 1942;
                 System.out.println("The year is: " + this.year);
                 break;
             case 2:
-                this.year = 1874;
+                this.year = 1968;
                 System.out.println("The year is: " + this.year);
                 break;
             case 3:
@@ -64,8 +64,8 @@ public class TimeZone {
     }
     public void timeTravel(Scanner in){
         System.out.println("What year would you like to time travel to:");
-        System.out.println("1) 1396");
-        System.out.println("2) 1874");
+        System.out.println("1) 1942");
+        System.out.println("2) 1968");
         System.out.println("3) 2019");
         System.out.println("4) 2064");
         System.out.println("5) 3065");
@@ -75,7 +75,7 @@ public class TimeZone {
         
         while (choice== 0 || choice == currentTP){
             if (choice == currentTP) {
-                System.out.println("Sorry that is the year tou are current at. "
+                System.out.println("Sorry that is the year you are currently at. "
                         + "Please choose a different year.");
             }
             choice = in.nextInt();
@@ -84,11 +84,11 @@ public class TimeZone {
         switch(choice){
             case 1:
                 this.timePeriod = 1;
-                this.year = 1396;
+                this.year = 1942;
                 break;
             case 2:
                 this.timePeriod = 2;
-                this.year = 1874;
+                this.year = 1968;
                 break;
             case 3:
                 this.timePeriod = 3;
