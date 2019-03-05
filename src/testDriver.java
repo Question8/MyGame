@@ -18,6 +18,7 @@ public class testDriver {
         current = new TimeZone(3);
         int choice = 1;
         boolean playing = false;
+        
         System.out.println("Would you like to 1) Create your own name, or "
                 + "2) Have a name generated for you");
         choice = in.nextInt();
@@ -47,22 +48,49 @@ public class testDriver {
             }
         }
 
-        while (playing) {
             current.setTimePeriod(1);
             current.setYear(1942);
+            
+        while (playing) {
 
-            Dialog(mainP, in, current.getTimePeriod());
+            //Dialog(mainP, in, current.getTimePeriod());
 
-        }
-       
+            System.out.println("Before.. X: "+ mainP.getXPos() + " Y: " + mainP.getYPos() + " Year: " + current.getYear());
+            for (int[] x : current.getMyMap()) {
+                for (int y : x) {
+                    System.out.print(y + " ");
+                }
+                System.out.println();
+            }
+            
+            System.out.println("Would you like to keep playing:"
+                    + "\n1)Yes"
+                    + "\n2)No");
+            choice = in.nextInt();
+            
+            if(choice == 1){
+                move(in, current.myMap, mainP, current);
+                System.out.println("After.. X: "+ mainP.getXPos() + " Y: " + mainP.getYPos());
+            }else{
+                playing = false;
+            }
+        }        
+
+//Mildred, Margaret, Mary, Mellisa, Mindie
+        
+        promptEnterKey();
         clear();
-}
+
+    }//End of main
+
 
     public static void clear() {
         for (int i = 0; i < 27; i++) {
             System.out.print("\n");
         }
-    }//end of clear
+
+    }//End of clear
+
 
     public static void fightHandler(Ninja N, Player P) {
         int choice;
@@ -113,7 +141,8 @@ public class testDriver {
 
         }
 
-    }//end of fightHandle
+
+    }//end of fightHandler
 
     public static void displayTitle() {
         System.out.println("    .....                                                                        .       ..      ");
@@ -213,7 +242,89 @@ public class testDriver {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }//end of promptEnterKey
+    }//End of promptEnterKey
+
+    
+     public static void move(Scanner in, int[][] theMap, Player P, TimeZone tz){
+        int dir = 0;
+        int choice = 0;
+        
+        System.out.println("What direction would you want to go?: "
+                + "1)N, 2)E, 3)S, 4)W");
+        dir = in.nextInt();
+        
+        switch(dir){
+            case 1://North
+                if(theMap[P.getYPos() -1][ P.getXPos()]==4) {
+                    System.out.println("There's a wall.. you can't go there.");
+                }
+                else {
+                    P.setYPos(P.getYPos() - 1);
+                    if(theMap[P.getYPos()][P.getXPos()]==8){
+                        System.out.println("Would you like to timetravel?: "
+                                + "\n1)Yes"
+                                + "\n2)No");
+                        choice = in.nextInt();
+                        
+                        if(choice ==   1)
+                            tz.timeTravel(in);
+                    }
+                }
+                break;
+            case 2://East
+                if(theMap[P.getYPos()][ P.getXPos() + 1]==4) {
+                    System.out.println("There's a wall.. you can't go there.");
+                }
+                else {
+                    P.setXPos(P.getXPos() + 1);
+                    if(theMap[P.getYPos()][P.getXPos()]==8){
+                        System.out.println("Would you like to timetravel?: "
+                                + "\n1)Yes"
+                                + "\n2)No");
+                        choice = in.nextInt();
+                        
+                        if(choice ==   1)
+                            tz.timeTravel(in);
+                    }
+                }
+                break;
+            case 3://South
+                if(theMap[P.getYPos() +1][ P.getXPos()]==4) {
+                    System.out.println("There's a wall.. you can't go there.");
+                }
+                else {
+                    P.setYPos(P.getYPos() + 1);
+                    if(theMap[P.getYPos()][P.getXPos()]==8){
+                        System.out.println("Would you like to timetravel?: "
+                                + "\n1)Yes"
+                                + "\n2)No");
+                        choice = in.nextInt();
+                        
+                        if(choice ==   1)
+                            tz.timeTravel(in);
+                    }
+                }
+                break;
+            case 4://West
+                if(theMap[P.getYPos() ][ P.getXPos() - 1]==4) {
+                    System.out.println("There's a wall.. you can't go there.");
+                }
+                else {
+                    P.setXPos(P.getXPos() - 1);
+                    if(theMap[P.getYPos()][P.getXPos()]==8){
+                        System.out.println("Would you like to timetravel?: "
+                                + "\n1)Yes"
+                                + "\n2)No");
+                        choice = in.nextInt();
+                        
+                        if(choice ==   1)
+                            tz.timeTravel(in);
+                    }
+                }
+                break;
+                
+        }
+    }// end of movefunction
 
     public static void typeWriter(String prompt, int speed) {
         String text = prompt;

@@ -10,22 +10,27 @@ public class Player extends Character {
     public Player(String name) {
         super();
         setName(name);
+        
+        setXPos(1);
+        setYPos(2);
+        
+        
     }
 
-    public int setXPos(int xPos) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setXPos(int xPos) {
+        this.xPos = xPos;
     }
 
     public int getXPos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return xPos;
     }
 
     public int getYPos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return yPos;
     }
 
-    public int setYPos(int yPos) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setYPos(int yPos) {
+        this.yPos = yPos;
     }
     
     @Override
