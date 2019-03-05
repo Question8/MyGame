@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class testDriver {
 
     public static void main(String[] args) {
-
+        
         displayTitle();
         Scanner in = new Scanner(System.in);
         Player mainP;
@@ -38,11 +38,12 @@ public class testDriver {
             choice = in.nextInt();
             if (choice == 3) {
                 displayInstructions();
-            }else if (choice == 1){
+            }
+            else if (choice == 1){
             playing = (choice == 1) ? true : false;
             }
             else{
-                System.out.print("Penis!!!!!!!!!!!!");
+                System.exit(0);
             }
         }
 
@@ -53,46 +54,9 @@ public class testDriver {
             Dialog(mainP, in, current.getTimePeriod());
 
         }
-
-        /* while (choice == 1) {
-            current.timeTravel(in);
-
-            System.out.println("hello");
-            choice = in.nextInt();
-        }
-         */
- /*      TESTING THE FIGHTS
-        System.out.println("Would you like to 1) Create your own Henchman, or "
-                + "2) Have a ninja generated for you");
-        choice = in.nextInt();
-        if (choice == 1) {
-            n1 = new Ninja(NinjaType.HENCHMAN);
-        }else{
-            n1 = new Ninja();
-        }
-
+       
         clear();
-        System.out.println("Main's Data");
-        mainP.printInfo();
-        
-        System.out.println("============================");
-        System.out.println("Ninja's Data");
-        n1.setName("Jacob");
-        n1.printInfo();
-        
-       fightHandler(n1, mainP);
-       clear();
-       System.out.println("out of fight\n\n");
-       System.out.println("Main's Data");
-        mainP.printInfo();
-        
-        System.out.println("============================");
-        System.out.println("Ninja's Data");
-        n1.printInfo();
-         */
-        clear();
-
-    }
+}
 
     public static void clear() {
         for (int i = 0; i < 27; i++) {
@@ -173,7 +137,17 @@ public class testDriver {
     }//end of displayTitle
 
     public static void displayInstructions() {
-        System.out.println("In The Void, you are placed into a laboratory ");
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.println("|-------------|");
+        System.out.println("|Instructions |");
+        System.out.println("|-------------|");
+        System.out.println("In The Void, you are placed into a laboratory with a little swing to it.\n"
+                + "You are trying to figure out what is happening there but with ninja's trying to stop\n"
+                + "you, it becomes really hard for every level to make it to. Through each level. You will\n"
+                + "be placed in the same lab but things will be changed inside of it from each year and\n"
+                + "different objects that will help your teleporter work again for you to make it to the\n"
+                + "next level. ");
+        System.out.println("---------------------------------------------------------------------------");
     }//end of displayInstructions
 
     public static void Dialog(Player p, Scanner in, int tp) {
@@ -232,6 +206,7 @@ public class testDriver {
     }//end of Dialog
 
     public static void promptEnterKey() {
+        System.out.println("\n");
         System.out.println("Press \"ENTER\" to continue...");
         try {
             int read = System.in.read(new byte[2]);
