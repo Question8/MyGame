@@ -1,5 +1,6 @@
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -10,7 +11,7 @@ public class testDriver {
 
     public static void main(String[] args) {
         
-        displayTitle();
+        //displayTitle();
         Scanner in = new Scanner(System.in);
         Player mainP;
         Ninja n1;
@@ -30,7 +31,7 @@ public class testDriver {
             mainP = new Player("John");
         }
 
-        Dialog(mainP, in, current.getTimePeriod());
+        //Dialog(mainP, in, current.getTimePeriod());
         while (!playing || (choice != 1 && choice !=2) ) {
             System.out.println("What do you want to do?\n"
                     + "1. Play\n"
@@ -48,8 +49,10 @@ public class testDriver {
             }
         }
 
-            current.setTimePeriod(1);
-            current.setYear(1942);
+        current.setTimePeriod(1);
+        current.setYear(1942);
+        current.initMap(current.getTimePeriod());
+            
             
         while (playing) {
 
@@ -90,7 +93,6 @@ public class testDriver {
         }
 
     }//End of clear
-
 
     public static void fightHandler(Ninja N, Player P) {
         int choice;
@@ -244,7 +246,6 @@ public class testDriver {
         }
     }//End of promptEnterKey
 
-    
      public static void move(Scanner in, int[][] theMap, Player P, TimeZone tz){
         int dir = 0;
         int choice = 0;
@@ -268,6 +269,20 @@ public class testDriver {
                         
                         if(choice ==   1)
                             tz.timeTravel(in);
+                    }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
+                        if(tz.getYear() == 1942){
+                            System.out.println("this is note from 1942");
+                        }else if(tz.getYear() == 1968){
+                            System.out.println("this is note from 1968");
+                        }else if(tz.getYear() == 2019){
+                            System.out.println("this is note from 2019");
+                        }else if(tz.getYear() == 2064){
+                            System.out.println("this is note from 2064");
+                        }else if(tz.getYear() == 3065){
+                            System.out.println("this is note from 3065");
+                        }else{
+                            System.out.println("Something went wrong");
+                        }
                     }
                 }
                 break;
@@ -285,6 +300,20 @@ public class testDriver {
                         
                         if(choice ==   1)
                             tz.timeTravel(in);
+                    }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
+                        if(tz.getYear() == 1942){
+                            System.out.println("this is note from 1942");
+                        }else if(tz.getYear() == 1968){
+                            System.out.println("this is note from 1968");
+                        }else if(tz.getYear() == 2019){
+                            System.out.println("this is note from 2019");
+                        }else if(tz.getYear() == 2064){
+                            System.out.println("this is note from 2064");
+                        }else if(tz.getYear() == 3065){
+                            System.out.println("this is note from 3065");
+                        }else{
+                            System.out.println("Something went wrong");
+                        }
                     }
                 }
                 break;
@@ -302,6 +331,20 @@ public class testDriver {
                         
                         if(choice ==   1)
                             tz.timeTravel(in);
+                    }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
+                        if(tz.getYear() == 1942){
+                            System.out.println("this is note from 1942");
+                        }else if(tz.getYear() == 1968){
+                            System.out.println("this is note from 1968");
+                        }else if(tz.getYear() == 2019){
+                            System.out.println("this is note from 2019");
+                        }else if(tz.getYear() == 2064){
+                            System.out.println("this is note from 2064");
+                        }else if(tz.getYear() == 3065){
+                            System.out.println("this is note from 3065");
+                        }else{
+                            System.out.println("Something went wrong");
+                        }
                     }
                 }
                 break;
@@ -319,6 +362,20 @@ public class testDriver {
                         
                         if(choice ==   1)
                             tz.timeTravel(in);
+                    }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
+                        if(tz.getYear() == 1942){
+                            System.out.println("this is note from 1942");
+                        }else if(tz.getYear() == 1968){
+                            System.out.println("this is note from 1968");
+                        }else if(tz.getYear() == 2019){
+                            System.out.println("this is note from 2019");
+                        }else if(tz.getYear() == 2064){
+                            System.out.println("this is note from 2064");
+                        }else if(tz.getYear() == 3065){
+                            System.out.println("this is note from 3065");
+                        }else{
+                            System.out.println("Something went wrong");
+                        }
                     }
                 }
                 break;
