@@ -1214,4 +1214,33 @@ public class TimeZone {
 
     }//end initMap
 
+    public void Notes(Scanner in){
+        System.out.println("You ran into a note... Do you want to read it?");
+        System.out.println("1) Yes");
+        System.out.println("2) No");
+        int note = in.nextInt();
+        
+        if(note == 1){
+            System.out.println("--------------------------------------------");
+            switch(timePeriod){
+                case 1:
+                    System.out.println("This is a note from 1942");
+                    break;
+                case 2:
+                    System.out.println("This is a note from 1968");
+                    break;
+                case 3:
+                    System.out.println("This is a note from 2019");
+                    break;
+                case 4:
+                    System.out.println("This is a note from 2064");
+                    break;
+                case 5:
+                    System.out.println("This is a note from 3065");
+                    break;
+            }
+            testDriver.promptEnterKey();
+            System.out.println("--------------------------------------------");
+        }
+    }//end of Notes
 }

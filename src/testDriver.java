@@ -76,7 +76,7 @@ public class testDriver {
                 System.out.println("After.. X: " + mainP.getXPos() + " Y: " + mainP.getYPos());
                 switch (theMap[mainP.getYPos()][mainP.getXPos()]) {
                     case 3:
-                        System.out.println("Note fuction");
+                       current.Notes(in);
                         break;
                     case 8:
                         System.out.println("Would you like to timetravel?: "
@@ -345,4 +345,5 @@ public class testDriver {
             }
         }
     }//end of typeWriter
+    
 }//end of testDriver
