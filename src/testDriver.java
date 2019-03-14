@@ -270,19 +270,7 @@ public class testDriver {
                         if(choice ==   1)
                             tz.timeTravel(in);
                     }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
-                        if(tz.getYear() == 1942){
-                            System.out.println("this is note from 1942");
-                        }else if(tz.getYear() == 1968){
-                            System.out.println("this is note from 1968");
-                        }else if(tz.getYear() == 2019){
-                            System.out.println("this is note from 2019");
-                        }else if(tz.getYear() == 2064){
-                            System.out.println("this is note from 2064");
-                        }else if(tz.getYear() == 3065){
-                            System.out.println("this is note from 3065");
-                        }else{
-                            System.out.println("Something went wrong");
-                        }
+                         tz.Notes(in);
                     }
                 }
                 break;
@@ -301,19 +289,7 @@ public class testDriver {
                         if(choice ==   1)
                             tz.timeTravel(in);
                     }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
-                        if(tz.getYear() == 1942){
-                            System.out.println("this is note from 1942");
-                        }else if(tz.getYear() == 1968){
-                            System.out.println("this is note from 1968");
-                        }else if(tz.getYear() == 2019){
-                            System.out.println("this is note from 2019");
-                        }else if(tz.getYear() == 2064){
-                            System.out.println("this is note from 2064");
-                        }else if(tz.getYear() == 3065){
-                            System.out.println("this is note from 3065");
-                        }else{
-                            System.out.println("Something went wrong");
-                        }
+                         tz.Notes(in);
                     }
                 }
                 break;
@@ -332,19 +308,7 @@ public class testDriver {
                         if(choice ==   1)
                             tz.timeTravel(in);
                     }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
-                        if(tz.getYear() == 1942){
-                            System.out.println("this is note from 1942");
-                        }else if(tz.getYear() == 1968){
-                            System.out.println("this is note from 1968");
-                        }else if(tz.getYear() == 2019){
-                            System.out.println("this is note from 2019");
-                        }else if(tz.getYear() == 2064){
-                            System.out.println("this is note from 2064");
-                        }else if(tz.getYear() == 3065){
-                            System.out.println("this is note from 3065");
-                        }else{
-                            System.out.println("Something went wrong");
-                        }
+                         tz.Notes(in);
                     }
                 }
                 break;
@@ -363,19 +327,8 @@ public class testDriver {
                         if(choice ==   1)
                             tz.timeTravel(in);
                     }else if(theMap[P.getYPos()][ P.getXPos()]==3) {
-                        if(tz.getYear() == 1942){
-                            System.out.println("this is note from 1942");
-                        }else if(tz.getYear() == 1968){
-                            System.out.println("this is note from 1968");
-                        }else if(tz.getYear() == 2019){
-                            System.out.println("this is note from 2019");
-                        }else if(tz.getYear() == 2064){
-                            System.out.println("this is note from 2064");
-                        }else if(tz.getYear() == 3065){
-                            System.out.println("this is note from 3065");
-                        }else{
-                            System.out.println("Something went wrong");
-                        }
+                       
+                        tz.Notes(in);
                     }
                 }
                 break;
@@ -396,4 +349,5 @@ public class testDriver {
             }
         }
     }//end of typeWriter
+    
 }//end of testDriver
