@@ -62,7 +62,7 @@ public class Character {
     
     //FIGHT FUNCTIONS
     public int attack() {
-        System.out.println("attacking");
+        System.out.println(this.name + " is attacking");
         int damage = new Random().nextInt((this.force - 1) + 1) + 1;
         return damage;
     }
@@ -78,11 +78,11 @@ public class Character {
         int dodgeTry = new Random().nextInt(12 + 1) + 1;
         
         if(dodgeTry % 3 == 0){
-            System.out.println("Succesful dodge");
+            System.out.println(this.name + " preformed a succesful dodge");
             return true;
             //counter-attack
         }else{
-            System.out.println("Failed dodge");
+            System.out.println(this.name + " failed to dodge");
             takeDamage(incoming);
             return false;
         }
