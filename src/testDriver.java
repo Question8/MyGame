@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class testDriver {
 
     public static void main(String[] args) {
-
         //displayTitle();
         Scanner in = new Scanner(System.in);
         Player mainP;
@@ -20,9 +19,8 @@ public class testDriver {
         int choice;
         boolean playing = false;
 
-        System.out.println("Would you like to 1) Create your own name, or "
-                + "2) Have a name generated for you");
-        choice = in.nextInt();
+        choice = validNum("Would you like to 1) Create your own name, or"
+                + " 2) Have a name generated for you");
         if (choice == 1) {
             System.out.println("What would you like to name your character?");
 
@@ -32,21 +30,24 @@ public class testDriver {
         }
 
         //Dialog(mainP, in, current.getTimePeriod());
-        while (!playing || (choice != 1 && choice != 2)) {
-            System.out.println("What do you want to do?\n"
+        while (!playing) {
+            choice = validNum("What do you want to do?\n"
                     + "1. Play\n"
                     + "2. Quit\n"
                     + "3. Instructions");
-            choice = in.nextInt();
             switch (choice) {
+                case 1:
+                    playing = true;
+                    break;
+                case 2:
+                    System.exit(0);
+                    break;
                 case 3:
                     displayInstructions();
                     break;
-                case 1:
-                    playing = (choice == 1);
-                    break;
                 default:
-                    System.exit(0);
+                    System.out.println("That was invalid\n");
+                    break;
             }
         }
 
@@ -66,44 +67,37 @@ public class testDriver {
                 System.out.println();
             }
 
-            System.out.println("Would you like to keep playing:"
-                    + "\n1)Yes"
-                    + "\n2)No");
-            choice = in.nextInt();
+            move(in, theMap, mainP);
+            System.out.println("After.. X: " + mainP.getXPos() + " Y: " + mainP.getYPos());
+            switch (theMap[mainP.getYPos()][mainP.getXPos()]) {
+                case 3:
+                    current.Notes(in);
+                    break;
+                case 8:
+                    choice = validNum("Would you like to timetravel?: "
+                            + "\n1)Yes"
+                            + "\n2)No");
 
-            if (choice == 1) {
-                move(in, theMap, mainP);
-                System.out.println("After.. X: " + mainP.getXPos() + " Y: " + mainP.getYPos());
-                switch (theMap[mainP.getYPos()][mainP.getXPos()]) {
-                    case 3:
-                       current.Notes(in);
-                        break;
-                    case 8:
-                        System.out.println("Would you like to timetravel?: "
-                                + "\n1)Yes"
-                                + "\n2)No");
-                        choice = in.nextInt();
+                    if (choice == 1) {
+                        System.out.println("While timetraveling a ninja appears");
+                        n = new Ninja(NinjaType.MINION);
+                        fightHandler(n, mainP);
 
-                        if (choice == 1) {
-                            System.out.println("While timetraveling a ninja appears");
-                            n = new Ninja();
-                            fightHandler(n, mainP);
-
-                            if (mainP.getHealth() <= 0) {
-                                System.out.println("You have died, Thanks for playing the void");
-                                playing = false;
-                            } else {
-                                current.timeTravel(in);
-                            }
+                        if (mainP.getHealth() <= 0) {
+                            System.out.println("You have died, Thanks for playing the void");
+                            playing = false;
+                        } else {
+                            current.timeTravel(in);
                         }
-                        break;
-                    case 5:
-                        System.out.println("Person at desk");
-                        break;
-                }
-            } else {
-                playing = false;
-            }
+                    }
+                    break;
+                case 5:
+                    System.out.println("Person at desk");
+                    break;
+                case 6:
+                    System.out.println("Random Event");
+                    break;
+            }//end of map switch
 
         }
 
@@ -130,11 +124,10 @@ public class testDriver {
             System.out.println("============================");
             System.out.println();
 
-            System.out.println("Would you like to: \n"
+            choice = validNum("Would you like to: \n"
                     + "1) Attack\n"
                     + "2) Dodge\n"
                     + "3) Nothing\n");
-            choice = in.nextInt();
             clear();
             switch (choice) {
                 case 1:
@@ -222,19 +215,19 @@ public class testDriver {
                         + "You breath deeply as if your on your last breath. You move through a laboratory... one you\n"
                         + "have seen before.. maybe in a later time. Then all of the sudden a black figure moves in\n"
                         + "front of you like a wondering shadow trying to find a home. Your heart sinks but you have\n"
-                        + "one mindset. To find out what Cam Corp. is up to and find a way back to 2019\n", 5);
+                        + "one mindset. To find out what Cam Corp. is up to and find a way back to 2019\n", 10);
                 promptEnterKey();
                 clear();
                 typeWriter("You look around the room. You see a teleporter right behind you that you just went through,\n"
                         + "a table in the middle of the room, and a note sitting like it was just put there. So perfect\n"
-                        + "and straight.\n", 5);
+                        + "and straight.\n", 10);
                 break;
             case 2:
                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------- ");
                 typeWriter("Year: 1968\n"
                         + "Location: Cam Cooperation\n"
                         + "Date: July 15th\n"
-                        + "\n", 15);
+                        + "\n", 10);
             case 3:
                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------- ");
                 typeWriter("Year: 2019\n"
@@ -244,7 +237,7 @@ public class testDriver {
                         + "Hello. How have you been? Working for \"Cam-Corp\" is still fun. It has been great here. People are very nice here and I have fit in really good in here.\n"
                         + "Although, I have a feeling something else is happening here.. People keep going into this inclosed room next to my table. I can not see what it is but\n"
                         + "I keep seeing bright lights come into the room at different times... Weird lights. Ones I have never seen before... Anyways I hope you are \n"
-                        + "having fun! I will see you soon. " + p.getName() + "\n", 5);
+                        + "having fun! I will see you soon. " + p.getName() + "\n", 10);
                 promptEnterKey();
                 clear();
                 typeWriter("Year: 2019\n"
@@ -257,7 +250,7 @@ public class testDriver {
                         + "\nYou are pulled into the misterious room. You see a lot of lab equipment and a what looks like to be a teleporter. The man with the suit drags\n"
                         + "you to a table in the middle of the room. He ties you down and starts to grab a knife. Out of experience, you kick him and grab the knife\n"
                         + "You cut the hard straps that you are stuck on and you start to run for the door. The man gets up and stops you and you turn around and run\n"
-                        + "into the teleporter hoping for the best.\n", 5);
+                        + "into the teleporter hoping for the best.\n", 10);
                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------- ");
                 System.out.println("\n");
                 break;
@@ -274,14 +267,27 @@ public class testDriver {
         }
     }//End of promptEnterKey
 
+    public static int validNum(String prompt) {
+        Scanner sc = new Scanner(System.in);
+        int number;
+        do {
+            System.out.println(prompt);
+            while (!sc.hasNextInt()) {
+                System.out.println("That's not a number!");
+                sc.next(); // this is important!
+            }
+            number = sc.nextInt();
+        } while (number <= 0);
+
+        return number;
+    }//End of validNum
+
     public static void move(Scanner in, int[][] theMap, Player P) {
         int dir = 0;
-        int choice = 0;
 
-        System.out.println("What direction would you want to go?: "
+        dir = validNum("What direction would you want to go?: "
                 + "1)N, 2)E, 3)S, 4)W"
                 + "\n5)Developer fast travel");
-        dir = in.nextInt();
 
         switch (dir) {
             case 1://North
@@ -315,14 +321,12 @@ public class testDriver {
             case 5://fast Travel
                 int newX = 0;
                 int newY = 0;
-                System.out.println("enter x-coordinate");
-                newX = in.nextInt();
-                System.out.println("Enter y-coordinate");
-                newY = in.nextInt();
+                newX = validNum("enter x-coordinate");
+                newY = validNum("Enter y-coordinate");
 
                 if (theMap[newY][newX] == 4) {
                     System.out.println("There's a wall.. you can't go there.");
-                } else {
+                }else {
                     P.setXPos(newX);
                     P.setYPos(newY);
 
@@ -333,17 +337,27 @@ public class testDriver {
     }// end of movefunction
 
     public static void typeWriter(String prompt, int speed) {
+
         String text = prompt;
+
         int i;
 
         for (i = 0; i < text.length(); i++) {
+
             System.out.printf("%c", text.charAt(i));
+
             try {
+
                 Thread.sleep(speed);
+
             } catch (InterruptedException e) {
+
                 Thread.currentThread().interrupt();
+
             }
+
         }
+
     }//end of typeWriter
-    
+
 }//end of testDriver

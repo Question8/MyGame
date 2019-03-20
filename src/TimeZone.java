@@ -68,13 +68,7 @@ public class TimeZone {
     }
 
     public void timeTravel(Scanner in) {
-        System.out.println("What year would you like to time travel to:");
-        System.out.println("1) 1942");
-        System.out.println("2) 1968");
-        System.out.println("3) 2019");
-        System.out.println("4) 2064");
-        System.out.println("5) 3065");
-
+        
         int choice = 0;
         int currentTP = this.timePeriod;
 
@@ -83,7 +77,12 @@ public class TimeZone {
                 System.out.println("Sorry that is the year you are currently at. "
                         + "Please choose a different year.");
             }
-            choice = in.nextInt();
+            choice = testDriver.validNum("What year would you like to time travel to:" 
+                +"\n1) 1942"
+                +"\n2) 1968"
+                +"\n3) 2019"
+                +"\n4) 2064"
+                +"\n5) 3065");
         }
 
         switch (choice) {
