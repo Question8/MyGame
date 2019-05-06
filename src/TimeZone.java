@@ -18,23 +18,18 @@ public class TimeZone {
         switch (timePeriod) {
             case 1:
                 this.year = 1942;
-                System.out.println("The year is: " + this.year);
                 break;
             case 2:
                 this.year = 1968;
-                System.out.println("The year is: " + this.year);
                 break;
             case 3:
                 this.year = 2019;
-                System.out.println("The year is: " + this.year);
                 break;
             case 4:
                 this.year = 2064;
-                System.out.println("The year is: " + this.year);
                 break;
             case 5:
                 this.year = 3065;
-                System.out.println("The year is: " + this.year);
                 break;
         }
     }

@@ -12,23 +12,25 @@ public class testDriver {
         //displayTitle();
         Scanner in = new Scanner(System.in);
         Player mainP;
+        mainP = new Player();
         TimeZone current;
         Ninja n;
 
         current = new TimeZone(3);
         int choice;
         boolean playing = false;
-
+        
         choice = validNum("Would you like to 1) Create your own name, or"
                 + " 2) Have a name generated for you");
         if (choice == 1) {
             System.out.println("What would you like to name your character?");
 
-            mainP = new Player(in.next());
-        } else {
-            mainP = new Player("John");
+            mainP.setName(in.next());
+        } else if (choice == 2) {
+            mainP.setName("John");
         }
-
+        
+        clear();
         //Dialog(mainP, in, current.getTimePeriod());
         while (!playing) {
             choice = validNum("What do you want to do?\n"
@@ -37,6 +39,7 @@ public class testDriver {
                     + "3. Instructions");
             switch (choice) {
                 case 1:
+                    clear();
                     playing = true;
                     break;
                 case 2:
@@ -87,6 +90,8 @@ public class testDriver {
                             System.out.println("You have died, Thanks for playing the void");
                             playing = false;
                         } else {
+                            System.out.println("You have beat " + n.getName());
+                            promptEnterKey();
                             current.timeTravel(in);
                         }
                     }
@@ -200,6 +205,8 @@ public class testDriver {
                 + "different objects that will help your teleporter work again for you to make it to the\n"
                 + "next level. ");
         System.out.println("---------------------------------------------------------------------------");
+        
+        promptEnterKey();
     }//end of displayInstructions
 
     public static void Dialog(Player p, Scanner in, int tp) {
@@ -265,6 +272,8 @@ public class testDriver {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+        clear();
     }//End of promptEnterKey
 
     public static int validNum(String prompt) {
@@ -332,8 +341,14 @@ public class testDriver {
 
                 }
                 break;
+            default:
+                System.out.println("That was invalid");
+                move(in, theMap, P);
+                break;
 
         }
+        
+        clear();
     }// end of movefunction
 
     public static void typeWriter(String prompt, int speed) {

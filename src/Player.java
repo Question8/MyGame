@@ -7,10 +7,9 @@ public class Player extends Character {
 
     private int yPos;
 
-    public Player(String name) {
+    public Player() {
         super();
-        setName(name);
-        
+               
         setXPos(1);
         setYPos(2);
         
