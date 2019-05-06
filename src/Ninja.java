@@ -9,19 +9,19 @@ public class Ninja extends Character {
         "Goldenblade", "The Rapid Mime", "Silver Claw", "The Unheard Figure",
         "The Snake Striker"};
 
-    private final int GBHP = 250;
+    private final int GBHP = 200;
     private final int GBS = 20;
     private final int GBF = 20;
 
-    private final int RBHP = 200;
+    private final int RBHP = 150;
     private final int RBS = 15;
     private final int RBF = 15;
 
-    private final int HHP = 150;
+    private final int HHP = 100;
     private final int HS = 10;
     private final int HF = 10;
 
-    private final int MHP = 100;
+    private final int MHP = 50;
     private final int MS = 5;
     private final int MF = 5;
 

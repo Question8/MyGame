@@ -54,10 +54,11 @@ public class testDriver {
         current.setYear(1942);
         current.initMap(current.getTimePeriod());
         int[][] theMap = current.getMyMap();
+        //Dialog(mainP, in, current.getTimePeriod());
 
         while (playing) {
 
-            //Dialog(mainP, in, current.getTimePeriod());
+            
             System.out.println("Before.. X: " + mainP.getXPos() + " Y: " + mainP.getYPos() + " Year: " + current.getYear());
             for (int[] x : current.getMyMap()) {
                 for (int y : x) {
@@ -86,7 +87,7 @@ public class testDriver {
 
                         if (choice == 1) {
                             System.out.println("While timetraveling a ninja appears");
-                            n = new Ninja();
+                            n = new Ninja(NinjaType.MINION);
                             fightHandler(n, mainP);
 
                             if (mainP.getHealth() <= 0) {
@@ -94,6 +95,7 @@ public class testDriver {
                                 playing = false;
                             } else {
                                 current.timeTravel(in);
+                                Dialog(mainP, in, current.getTimePeriod());
                             }
                         }
                         break;
@@ -202,10 +204,14 @@ public class testDriver {
         System.out.println("|-------------|");
         System.out.println("In The Void, you are placed into a laboratory with a little swing to it.\n"
                 + "You are trying to figure out what is happening there but with ninja's trying to stop\n"
-                + "you, it becomes really hard for every level to make it to. Through each level. You will\n"
-                + "be placed in the same lab but things will be changed inside of it from each year and\n"
-                + "different objects that will help your teleporter work again for you to make it to the\n"
-                + "next level. ");
+                + "you, it becomes harder for each level to make it to. Through each level. You will\n"
+                + "be placed in the same lab but things will be changed inside of it from year to year, making\n"
+                + "this game a little harder to figure out. Once you do tho, you will figure out the reason of\n"
+                + "why you are here. Good luck !!\n"
+                + "Controls:\n"
+                + "------------------------------------------------------------------------------------\n"
+                + "WASD Buttons: Moves Player\n"
+                + "Enter Key: Brings New Dialog\n");
         System.out.println("---------------------------------------------------------------------------");
     }//end of displayInstructions
 
