@@ -813,7 +813,7 @@ public class TimeZone {
                 this.myMap[2][4] = 4;
                 this.myMap[2][5] = 0;
                 this.myMap[2][6] = 0;
-                this.myMap[2][7] = 5;
+                this.myMap[2][7] = 0;
                 this.myMap[2][8] = 0;
                 this.myMap[2][9] = 0;
                 this.myMap[2][10] = 4;
@@ -831,7 +831,7 @@ public class TimeZone {
                 this.myMap[3][4] = 4;
                 this.myMap[3][5] = 0;
                 this.myMap[3][6] = 0;
-                this.myMap[3][7] = 5;
+                this.myMap[3][7] = 0;
                 this.myMap[3][8] = 0;
                 this.myMap[3][9] = 0;
                 this.myMap[3][10] = 4;
@@ -849,7 +849,7 @@ public class TimeZone {
                 this.myMap[4][4] = 4;
                 this.myMap[4][5] = 4;
                 this.myMap[4][6] = 0;
-                this.myMap[4][7] = 5;
+                this.myMap[4][7] = 0;
                 this.myMap[4][8] = 0;
                 this.myMap[4][9] = 4;
                 this.myMap[4][10] = 4;
@@ -988,7 +988,7 @@ public class TimeZone {
                 break;
                 
             case 5://This is 3065
-                this.myMap[0][0] = 4;
+                 this.myMap[0][0] = 4;
                 this.myMap[0][1] = 4;
                 this.myMap[0][2] = 4;
                 this.myMap[0][3] = 4;
@@ -1031,7 +1031,7 @@ public class TimeZone {
                 this.myMap[2][4] = 4;
                 this.myMap[2][5] = 0;
                 this.myMap[2][6] = 0;
-                this.myMap[2][7] = 5;
+                this.myMap[2][7] = 0;
                 this.myMap[2][8] = 0;
                 this.myMap[2][9] = 0;
                 this.myMap[2][10] = 4;
@@ -1049,7 +1049,7 @@ public class TimeZone {
                 this.myMap[3][4] = 4;
                 this.myMap[3][5] = 0;
                 this.myMap[3][6] = 0;
-                this.myMap[3][7] = 5;
+                this.myMap[3][7] = 0;
                 this.myMap[3][8] = 0;
                 this.myMap[3][9] = 0;
                 this.myMap[3][10] = 4;
@@ -1067,7 +1067,7 @@ public class TimeZone {
                 this.myMap[4][4] = 4;
                 this.myMap[4][5] = 4;
                 this.myMap[4][6] = 0;
-                this.myMap[4][7] = 5;
+                this.myMap[4][7] = 0;
                 this.myMap[4][8] = 0;
                 this.myMap[4][9] = 4;
                 this.myMap[4][10] = 4;
