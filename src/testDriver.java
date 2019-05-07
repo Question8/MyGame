@@ -1,6 +1,8 @@
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Random;
+import java.io.FileOutputStream; 
 
 /**
  *
@@ -19,7 +21,7 @@ public class testDriver {
         current = new TimeZone(3);
         int choice;
         boolean playing = false;
-        
+        saveGame();
         choice = validNum("Would you like to 1) Create your own name, or"
                 + " 2) Have a name generated for you");
         if (choice == 1) {
@@ -101,7 +103,7 @@ public class testDriver {
                     System.out.println("Person at desk");
                     break;
                 case 6:
-                    System.out.println("Random Event");
+                    randomEvent(mainP);
                     break;
             }//end of map switch
 
@@ -380,5 +382,42 @@ public class testDriver {
         }
 
     }//end of typeWriter
+    
+    public static void randomEvent(Player P){
+        
+        String[] goodEvent = {"You accidently spill Pym particles on yourself.",
+            "You are exposed to radiation.", "You inhale a mix of fumes that make you stronger."};
+        
+        String[] badEvent = {"You have stepped on a broken beaker.", "You have ran into a poison trap.",
+            "You stepped on a bear trap.", "You accidently soill acid on your hand.", 
+            "You accidently spill Pym particles on your hand."};
+        
+        String effect = "";
+        int randomHealth = 0;
+        Random rand = new Random();
+        randomHealth = rand.nextInt((20 - 5) + 1) + 5;
+        
+        boolean isBad = true;
+        isBad = (rand.nextBoolean());
+        int effectNum = 0;
+        
+        if(isBad){
+            effectNum = rand.nextInt(4);
+            effect = badEvent[effectNum];
+            System.out.println("You lost: " + randomHealth + " Health.");            
+            P.setHealth(P.getHealth() - randomHealth);
+        }else{
+            effectNum = rand.nextInt(2);
+            effect = goodEvent[effectNum];
+            
+            P.setHealth(P.getHealth() + randomHealth);
+            System.out.println("You gained: " + randomHealth + " Health.");
+        }
+        
+        System.out.println(effect + "You now have: " + P.getHealth() + " health");
+        promptEnterKey();
+        
+    }//end of randomEvent
+    
 
 }//end of testDriver
