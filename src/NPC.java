@@ -13,4 +13,8 @@ public class NPC extends Character {
     public void talk(){
         
     }
+    
+    public static void ladyDialog(){
+        
+    }
 }

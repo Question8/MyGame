@@ -1,0 +1,25 @@
+1942:
+"Hey you found me! my name is (set name). A lot of people miss me these days. I am in my own little space so it is okay... Anyways, I heard you were
+maybe coming over here. I was told by a man that if you did, that you needed to know a couple things.
+1) The teleporter is at the top left of the lab
+2) The note can really help you out
+Hope you find what you are looking for !!"
+
+1968:
+You come up to the help desk where a woman is sitting smiling at you. Her name tag says (set name)
+"Hello. Have we met before? Oh! That's right, you are the traveler. You do not have much time. I need to tell you a couple things..
+1) Health regeneration is somewhere on the left side of the lab
+2) I am sure you know this but the teleporter is on the top left of the lab
+"If you need to hear this again, please come back. Now go!"
+
+2019:
+As you walk up to the help desk, you see a buisness card with the name of (set name)
+"Oh wow, you made it.. I am surprised you made it past the traps.. Must be nice. A lot of people do not coming through the teleporter anymore.
+They are trying to keep people away now. You are the first person I have seen in a LONG time. Just remember how you did that to get out. Just do the
+opposite.. Anyways, I have things I need to tell you.
+1) Health regeneration is somewhere on the left wall of the lab
+2) There are more traps than you have seen so BE CAREFUL
+3) There is something special at the bottom of the lab closer to this room
+Be careful out there! It is getting worse.. I can't even walk here anymore without worrying about my life."
+
+2064:

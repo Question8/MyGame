@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class testDriver {
 
     public static void main(String[] args) {
-        //displayTitle();
+        displayTitle();
         Scanner in = new Scanner(System.in);
         Player mainP;
         mainP = new Player();
@@ -31,7 +31,7 @@ public class testDriver {
         }
         
         clear();
-        //Dialog(mainP, in, current.getTimePeriod());
+        Dialog(mainP, in, current.getTimePeriod());
         while (!playing) {
             choice = validNum("What do you want to do?\n"
                     + "1. Play\n"
@@ -58,7 +58,7 @@ public class testDriver {
         current.setYear(1942);
         current.initMap(current.getTimePeriod());
         int[][] theMap = current.getMyMap();
-        //Dialog(mainP, in, current.getTimePeriod());
+        Dialog(mainP, in, current.getTimePeriod());
 
         while (playing) {
 
@@ -227,7 +227,7 @@ public class testDriver {
                         + "You breath deeply as if your on your last breath. You move through a laboratory... one you\n"
                         + "have seen before.. maybe in a later time. Then all of the sudden a black figure moves in\n"
                         + "front of you like a wondering shadow trying to find a home. Your heart sinks but you have\n"
-                        + "one mindset. To find out what Cam Corp. is up to and find a way back to 2019\n", 10);
+                        + "one mindset. To find out what Cam Corp is up to and find a way back to 2019\n", 10);
                 promptEnterKey();
                 clear();
                 typeWriter("You look around the room. You see a teleporter right behind you that you just went through,\n"
@@ -239,7 +239,10 @@ public class testDriver {
                 typeWriter("Year: 1968\n"
                         + "Location: Cam Cooperation\n"
                         + "Date: July 15th\n"
-                        + "\n", 10);
+                        + "\n"
+                        + "If you are seeing this.. This note is from the person I know very well. I am going to help\n"
+                        + "you as much as I can. Right now there is a woman that needs to talk to you. She is 5 spaces\n"
+                        + "up and 2 spaces right. She will help you from there.", 10);
             case 3:
                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------- ");
                 typeWriter("Year: 2019\n"
@@ -380,5 +383,16 @@ public class testDriver {
         }
 
     }//end of typeWriter
+    
+    public static void parallelArray(){
+        String[] armor = {"Cloth", "Silver", "Gold", "Diamond"};
+        int[] armorHealth = {1, 4, 8, 16};
+        
+        for (int i = 0; i < armor.length; i++) {
+            System.out.println(armor[i]);
+            System.out.println(armorHealth[i]);
+        }
+    }
+    
 
 }//end of testDriver
